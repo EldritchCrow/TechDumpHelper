@@ -1,0 +1,29 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.item{
+	margin: 10px;
+	height: 135px;
+	border: 2px solid black;
+}
+.item-image{
+	height: 100%;
+	float: left;
+}
+.item-information{
+	margin-left: 240px;
+	padding: 5px;
+}
+.item-category{
+	display: inline-block;
+	margin: 2px;
+	background-color: #CCCCCC;
+	border-radius: 3px;
+	padding: 2px 4px;
+	font-size: 12px;
+	font-weight: bold;
+}
+.item-delete{
+	float: right;
+}
