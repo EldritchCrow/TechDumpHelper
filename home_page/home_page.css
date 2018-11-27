@@ -1,5 +1,7 @@
 
-
+body {
+   text-align: center;
+}
 
 h4 {
    clear: none;
@@ -12,13 +14,36 @@ h5 {
 }
 
 #sites img{
-   width: 100px;
-   height: 100px;
+   width: 200px;
+   height: 200px;
 }
 
-#sites td {
-   border: 1px solid black;
-   border-radius: 5px;
-   margin: 2px;
-   background: lightblue;
+#sites {
+   margin: 0 auto 0 auto;
+}
+
+a {
+   margin: 10px;
+   padding: 0.5em;
+   width: 300px;
+   height: 250px;
+   display: inline-block;
+   text-align: center;
+   background-color: rgb(95, 162, 224);
+   color: white;
+   box-shadow: 5px 5px rgb(59, 130, 238);
+   text-decoration: none;
+}
+
+a:hover{
+   background-color: rgb(87, 59, 241);
+   cursor: pointer;
+}
+
+a:active{
+   background-color: black;
+}
+
+a:visited{
+   color: white;
 }

@@ -1,0 +1,34 @@
+{
+   "sites": [
+      {
+         "name": "Darrin Communications Center",
+         "picture": "/techdumphelper/resources/site_photos/DCC_fin.jpg",
+         "rating": "3",
+         "url": "/techdumphelper/sites/DCC.html"
+      },
+      {
+         "name": "Low Center for Industrial Innovation",
+         "picture": "/techdumphelper/resources/site_photos/CII_fin.jpg",
+         "rating": "3",
+         "url": "/techdumphelper/sites/CII.html"
+      },
+      {
+         "name": "Jonsson Engineering Center",
+         "picture": "/techdumphelper/resources/site_photos/JEC_fin.jpg",
+         "rating": "3",
+         "url": "/techdumphelper/sites/JEC.html"
+      },
+      {
+         "name": "Student Union",
+         "picture": "/techdumphelper/resources/site_photos/Union_fin.jpg",
+         "rating": "3",
+         "url": "/techdumphelper/sites/Union.html"
+      },
+      {
+         "name": "Voorhees Computing Center",
+         "picture": "/techdumphelper/resources/site_photos/VCC_fin.jpg",
+         "rating": "3",
+         "url": "/techdumphelper/sites/VCC.html"
+      }
+   ]
+}
