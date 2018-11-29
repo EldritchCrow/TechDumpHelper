@@ -2,10 +2,15 @@
 	margin: 0;
 	padding: 0;
 }
-.item{
+#header{
+	text-align: center;
+}
+#new-item, .item{
 	margin: 10px;
-	height: 135px;
 	border: 2px solid black;
+}
+.item{
+	height: 135px;
 }
 .item-image{
 	height: 100%;
