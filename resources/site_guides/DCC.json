@@ -1,8 +1,8 @@
 {
    "steps" : [
-      "hello0",
-      "hello1",
-      "hello2",
+      "Enter through the main door and proceed right down the hallway towards room 337.",
+      "Take the stairs down a level and turn right.",
+      "Head straight down the hallway.",
       "hello3"
    ],
    "final_step" : "hello_fin"

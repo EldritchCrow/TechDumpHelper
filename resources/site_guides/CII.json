@@ -1,0 +1,9 @@
+{
+   "steps" : [
+      "Enter the main atrium of CII and enter the hallway pictured in the back left.",
+      "Go down the hallway and take the first right.",
+      "The right turn in question.",
+      "Go straight and turn left past the freight elevator."
+   ],
+   "final_step" : "The loading bay and tech dump will be straight ahead"
+}
