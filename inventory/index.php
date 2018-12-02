@@ -33,24 +33,27 @@ require '../resources/sites.php';
 		<div id="content" class="menupadding">
 			<div id="inventory">
 				<div id="new-item">
-					<button onclick="$('#new-item form').slideToggle();">+ New Item</button>
+					<button id="new-item-button" onclick="$('#new-item form').slideDown();$(this).slideUp();$('#new-item-form-title').focus();">+ New Item</button>
 					<form action="add_inventory.php?td=<?=$td?>" method="post">
 						<label>
-							Title:
-							<input type="text" name="title" required>
+							Title:<br>
+							<input id="new-item-form-title" type="text" name="title" required>
 						</label><br>
+						<br>
 						<label>
 							Description:<br>
-							<textarea name="description"></textarea><br>
-						</label>
+							<textarea name="description" rows="3"></textarea><br>
+						</label><br>
 						Categories:
 						<div class="item-categories"></div>
+						<br>
 						<label>
 							Picture:
-							<input type="file" name="picture">
+							<input type="file" name="picture" value="Open Camera/File">
 						</label><br>
+						<br>
 						<input type="submit" value="Submit">
-						<input type="button" value="Cancel" onclick="$('#new-item form').slideUp()">
+						<input type="button" value="Cancel" onclick="$('#new-item form').slideUp();$('#new-item-button').slideDown();">
 					</form>
 				</div>
 			</div>

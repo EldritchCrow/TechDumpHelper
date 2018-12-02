@@ -52,13 +52,12 @@ $(document).ready(function(){
 		}
 	});
 
-
 });
 
 function renderItems(data, deleted = false){
 	$.each(data, function(i, item){
 		var output = '<div class="item' + (deleted ? ' item-deleted"' : '"') + '>';
-		output += '<button class="item-delete" onclick="deleteItem(' + item['id'] + ');">&cross;</button>';
+		if(!deleted) output += '<button class="item-delete" onclick="deleteItem(' + item['id'] + ');">&cross;</button>';
 		output += '<a href="../resources/item_images/' + item['id'] + '.jpg" target="_blank"><img class="item-image" src="../resources/item_images/thumbnail/' + item['id'] + '.jpg" width="240" height="135"></a>';
 		output += '<div class="item-information">';
 		output += '<h3 class="item-title">' + item['title'] + '</h3>';
