@@ -2,35 +2,35 @@
    "sites": [
       {
          "name": "Darrin Communications Center",
-         "picture": "../resources/site_photos/DCC_fin.jpg",
+         "picture": "../resources/site_photos/dcc_fin.jpg",
          "rating": "3",
          "url": "../guide/?site=dcc",
          "id": "dcc"
       },
       {
          "name": "Low Center for Industrial Innovation",
-         "picture": "../resources/site_photos/CII_fin.jpg",
+         "picture": "../resources/site_photos/cii_fin.jpg",
          "rating": "3",
          "url": "../guide/?site=cii",
          "id": "cii"
       },
       {
          "name": "Jonsson Engineering Center",
-         "picture": "../resources/site_photos/JEC_fin.jpg",
+         "picture": "../resources/site_photos/jec_fin.jpg",
          "rating": "3",
          "url": "../guide/?site=jec",
          "id": "jec"
       },
       {
          "name": "Student Union",
-         "picture": "../resources/site_photos/Union_fin.jpg",
+         "picture": "../resources/site_photos/union_fin.jpg",
          "rating": "3",
          "url": "../guide/?site=union",
          "id": "union"
       },
       {
          "name": "Voorhees Computing Center",
-         "picture": "../resources/site_photos/VCC_fin.jpg",
+         "picture": "../resources/site_photos/vcc_fin.jpg",
          "rating": "3",
          "url": "../guide/?site=vcc",
          "id": "vcc"
