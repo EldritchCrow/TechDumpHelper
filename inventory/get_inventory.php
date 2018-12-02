@@ -8,7 +8,7 @@ header('Content-Type: application/json');
 
 // Check for missing td parameter
 if(!$td){
-	http_response_code(422);
+	http_response_code(400);
 	die(json_encode(['error' => 'Missing td parameter']));
 }
 
@@ -56,7 +56,7 @@ foreach($items_rows as $item){
 		'id' => $item['ID'],
 		'title' => $item['Title'],
 		'description' => $item['Description'],
-		'datetime' => $datetime->format('m/d/y H:i A'),// Output the time in the desired format
+		'datetime' => $datetime->format('m/d/y g:i A'),// Output the time in the desired format
 		'categories' => $categories
 	]);
 }
