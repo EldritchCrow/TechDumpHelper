@@ -1,65 +1,63 @@
+<?php
+
+// Check for site parameter
+$td = $_GET['site'] ?? null;
+if(!$td){
+	http_response_code(400);
+	die('Error: site parameter is missing');
+}
+
+// Get site information
+$site_data = json_decode(file_get_contents('../resources/site_data.json'), true);
+$site_found = false;
+foreach($site_data['sites'] as $index => $site){
+	if($site['id'] == $td){
+		$site_data = $site_data['sites'][$index];
+		$site_found = true;
+		break;
+	}
+}
+// Check that site was found
+if(!$site_found){
+	http_response_code(404);
+	die('Error: Invalid site ID');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Tech Dump Inventory</title>
+		<title><?=$site_data['name']?> Tech Dump Inventory</title>
 		<link rel="stylesheet" href="../resources/inventory.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>var td = '<?=$td?>';</script>
+		<script src="../resources/inventory.js"></script>
 	</head>
 	<body>
 		<div id="header">
-			<h1>Inventory</h1>
+			<h1><?=$site_data['name']?> Inventory</h1>
 		</div>
 		<div id="inventory">
 			<div id="new-item">
-				<button>+ New Item</button>
-				<form>
+				<button onclick="$('#new-item form').slideToggle();">+ New Item</button>
+				<form action="add_inventory.php?td=<?=$td?>" method="post">
 					<label>
-						Item Name:
-						<input type="text" name="itemname" required>
+						Title:
+						<input type="text" name="title" required>
 					</label><br>
 					<label>
-						Description<br>
+						Description:<br>
 						<textarea name="description"></textarea><br>
 					</label>
-					Categories:<br>
-					<label class="item-category">
-						<input type="checkbox" name="category" value="junk">
-						Junk
-					</label>
-					<label class="item-category">
-						<input type="checkbox" name="category" value="computers">
-						Computers
-					</label><br>
+					Categories:
+					<div class="item-categories"></div>
 					<label>
 						Picture:
 						<input type="file" name="picture">
 					</label><br>
 					<input type="submit" value="Submit">
-					<input type="button" value="Cancel">
+					<input type="button" value="Cancel" onclick="$('#new-item form').slideUp()">
 				</form>
-			</div>
-			<div class="item">
-				<button class="item-delete">&cross;</button>
-				<img class="item-image" src="" width="240" height="135">
-				<div class="item-information">
-					<h3 class="item-title">Title</h3>
-					<div class="item-categories">
-						<div class="item-category">Junk</div>
-						<div class="item-category">Computers</div>
-					</div>
-					<p class="item-description">Description</p>
-				</div>
-			</div>
-			<div class="item">
-				<button class="item-delete">&cross;</button>
-				<img class="item-image" src="" width="240" height="135">
-				<div class="item-information">
-					<h3 class="item-title">Title</h3>
-					<div class="item-categories">
-						<div class="item-category">Junk</div>
-						<div class="item-category">Computers</div>
-					</div>
-					<p class="item-description">Description</p>
-				</div>
 			</div>
 		</div>
 	</body>

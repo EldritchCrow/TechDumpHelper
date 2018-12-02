@@ -17,7 +17,7 @@ require 'database.php';
 
 // Get the inventory for the specified tech dump
 try{
-	$items_stmt = $sql->prepare('SELECT ID, Title, Description, Date FROM inventory_items WHERE TechDump = ? AND Deleted = ? ORDER BY Date');
+	$items_stmt = $sql->prepare('SELECT ID, Title, Description, Date FROM inventory_items WHERE TechDump = ? AND Deleted = ? ORDER BY Date DESC');
 	$items_stmt->execute([$td, $deleted]);
 	$items_rows = $items_stmt->fetchAll();
 }catch(PDOException $e){

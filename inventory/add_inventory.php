@@ -52,3 +52,6 @@ try{
 	http_response_code(500);
 	die(json_encode(['error' => 'Failed to insert into the database']));
 }
+
+header("Location: ./?site=$td");
+die('Error: Failed to redirect back to the inventory page');

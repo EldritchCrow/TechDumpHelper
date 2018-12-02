@@ -5,6 +5,9 @@
 #header{
 	text-align: center;
 }
+#new-item form{
+	display: none;
+}
 #new-item, .item{
 	margin: 10px;
 	border: 2px solid black;
@@ -31,4 +34,10 @@
 }
 .item-delete{
 	float: right;
+}
+.item-deleted{
+	opacity: 0.33;
+}
+.item-deleted:hover{
+	opacity: 1.0;
 }
