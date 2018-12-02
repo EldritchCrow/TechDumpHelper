@@ -17,7 +17,7 @@ require 'database.php';
 
 // Get the inventory for the specified tech dump
 try{
-	$items_stmt = $sql->prepare('SELECT ID, Title, Description, Date FROM inventory_items WHERE TechDump = ? AND Deleted = ? ORDER BY Date DESC');
+	$items_stmt = $sql->prepare('SELECT ID, Title, Description, Date, DeletedDate FROM inventory_items WHERE TechDump = ? AND Deleted = ? ORDER BY Date DESC');
 	$items_stmt->execute([$td, $deleted]);
 	$items_rows = $items_stmt->fetchAll();
 }catch(PDOException $e){
@@ -47,9 +47,13 @@ foreach($items_rows as $item){
 	}
 	foreach($categories_rows as $category) array_push($categories, $category['Name']);
 
-	// Convert the timezone
+	// Convert the timezones
 	$datetime = new DateTime($item['Date']);
 	$datetime->setTimezone(new DateTimeZone('America/New_York'));
+	if($deleted){
+		$datetime_deleted = new DateTime($item['DeletedDate']);
+		$datetime_deleted->setTimezone(new DateTimeZone('America/New_York'));
+	}
 
 	// Populate the output array
 	array_push($items, [
@@ -57,6 +61,7 @@ foreach($items_rows as $item){
 		'title' => $item['Title'],
 		'description' => $item['Description'],
 		'datetime' => $datetime->format('m/d/y g:i A'),// Output the time in the desired format
+		'datetimeDeleted' => $deleted ? $datetime_deleted->format('m/d/y g:i A') : null,
 		'categories' => $categories
 	]);
 }

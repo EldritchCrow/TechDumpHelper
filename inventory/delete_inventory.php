@@ -14,7 +14,7 @@ require 'database.php';
 
 // Mark the item as deleted in the items table
 try{
-	$delete_stmt = $sql->prepare('UPDATE inventory_items SET Deleted = 1 WHERE ID = ?');
+	$delete_stmt = $sql->prepare('UPDATE inventory_items SET Deleted = 1, DeletedDate = CURRENT_TIMESTAMP WHERE ID = ?');
 	$delete_stmt->execute([$itemID]);
 }catch(PDOException $e){
 	http_response_code(500);
