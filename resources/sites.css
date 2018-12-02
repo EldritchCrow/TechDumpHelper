@@ -63,7 +63,7 @@ body{
 }
 #content{
 	margin-top: 84px;
-	padding-top: 10px;
+	padding: 10px;
 }
 #content.menupadding{
 	margin-left: 300px;

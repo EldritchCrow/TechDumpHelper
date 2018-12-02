@@ -1,0 +1,17 @@
+ol{
+	list-style-position: inside;
+}
+li{
+	margin-bottom: 10px;
+}
+#content{
+	font-size: 18px;
+}
+#content img{
+	margin: 10px 0;
+	padding: 20px;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: white;
+	box-shadow: 5px 5px #cccccc;
+}
