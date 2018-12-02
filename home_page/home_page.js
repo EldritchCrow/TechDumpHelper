@@ -2,13 +2,13 @@
 
 $(document).ready(function () {
 
-   $.get("/techdumphelper/templates/header.txt", function(data) {
+   $.get("../templates/header.txt", function(data) {
       $("#header").append(data);
    });
 
    $.ajax({
       type: "GET",
-      url: "/techdumphelper/resources/site_data.json",
+      url: "../resources/site_data.json",
       dataType: "json",
       success: function (data, status) {
          var output = "<tr>";
