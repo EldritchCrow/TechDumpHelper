@@ -1,16 +1,10 @@
-*{
-	margin: 0;
-	padding: 0;
-}
-#header{
-	text-align: center;
-}
 #new-item form{
 	display: none;
 }
 #new-item, .item{
 	margin: 10px;
-	border: 2px solid black;
+	background-color: white;
+	box-shadow: 5px 5px #cccccc;
 }
 .item{
 	height: 135px;
