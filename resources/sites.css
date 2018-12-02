@@ -36,6 +36,10 @@ body{
 	font-weight: normal;
 	height: 44px;
 	line-height: 44px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: font-size linear 250ms;
 }
 #header-navigation{
 	font-size: 0;
@@ -48,6 +52,7 @@ body{
 	font-size: 24px;
 	height: 40px;
 	line-height: 40px;
+	transition: font-size linear 250ms;
 }
 #header-navigation a:hover{
 	color: black;
@@ -88,4 +93,17 @@ body{
 #sidemenu a.current{
 	background-color: darkgray;
 	color: black;
+}
+@media(max-width: 1280px){
+	#content.menupadding{
+		margin-left: 0;
+	}
+	#header{
+		font-size: 0.6em;
+		transition: font-size linear 250ms;
+	}
+	#header-navigation a:link, #header-navigation a:visited{
+		font-size: 18px;
+		transition: font-size linear 250ms;
+	}
 }

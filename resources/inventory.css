@@ -52,10 +52,13 @@
 	float: left;
 	max-width: 240px;
 	max-height: 135px;
+	transition-property: max-width;
+	transition: max-height linear 250ms, min-height linear 250ms;
 }
 .item-information{
 	margin-left: 240px;
 	padding: 5px;
+	transition: margin-left linear 250ms;
 }
 .item-categories{
 	margin-bottom: 4px;
@@ -91,4 +94,15 @@
 .item-datetime{
 	font-size: 12px;
 	margin: 3px 0;
+}
+@media (max-width: 700px){
+	.item-image{
+		max-width: 120px;
+		max-height: 67.5px;
+		transition: max-height linear 250ms, min-height linear 250ms;
+	}
+	.item-information{
+		margin-left: 120px;
+		transition: margin-left linear 250ms;
+	}
 }

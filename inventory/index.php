@@ -9,6 +9,7 @@ require '../resources/sites.php';
 		<title><?=$site_data['name']?> Tech Dump Inventory</title>
 		<link rel="stylesheet" href="../resources/sites.css">
 		<link rel="stylesheet" href="../resources/inventory.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>var td = '<?=$td?>';</script>
 		<script src="../resources/inventory.js"></script>
