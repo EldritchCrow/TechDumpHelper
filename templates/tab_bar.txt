@@ -1,3 +1,0 @@
-<button class="tab_button" id="guide_button" onclick="loadGuide();">Guide</button>
-<button class="tab_button" id="inventory_button" onclick="loadInventory();">Inventory</button>
-<button class="tab_button" id="trends_button" onclick="loadTrends();">Trends</button>
