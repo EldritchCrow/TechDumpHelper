@@ -17,7 +17,7 @@ require 'database.php';
 
 // Get the inventory for the specified tech dump
 try{
-	$items_stmt = $sql->prepare('SELECT ID, Title, Description, Date, DeletedDate FROM inventory_items WHERE TechDump = ? AND Deleted = ? ORDER BY Date DESC');
+	$items_stmt = $sql->prepare('SELECT ID, Title, Description, Date, DeletedDate, HasPicture FROM inventory_items WHERE TechDump = ? AND Deleted = ? ORDER BY Date DESC');
 	$items_stmt->execute([$td, $deleted]);
 	$items_rows = $items_stmt->fetchAll();
 }catch(PDOException $e){
@@ -60,6 +60,7 @@ foreach($items_rows as $item){
 		'id' => $item['ID'],
 		'title' => $item['Title'],
 		'description' => $item['Description'],
+		'hasPicture' => (bool) $item['HasPicture'],
 		'datetime' => $datetime->format('m/d/y g:i A'),// Output the time in the desired format
 		'datetimeDeleted' => $deleted ? $datetime_deleted->format('m/d/y g:i A') : null,
 		'categories' => $categories

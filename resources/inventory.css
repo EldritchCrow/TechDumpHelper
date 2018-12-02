@@ -49,8 +49,9 @@
 	min-height: 135px;
 }
 .item-image{
-	height: 100%;
 	float: left;
+	max-width: 240px;
+	max-height: 135px;
 }
 .item-information{
 	margin-left: 240px;

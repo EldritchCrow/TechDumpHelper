@@ -34,7 +34,7 @@ require '../resources/sites.php';
 			<div id="inventory">
 				<div id="new-item">
 					<button id="new-item-button" onclick="$('#new-item form').slideDown();$(this).slideUp();$('#new-item-form-title').focus();">+ New Item</button>
-					<form action="add_inventory.php?td=<?=$td?>" method="post">
+					<form action="add_inventory.php?td=<?=$td?>" method="post" enctype="multipart/form-data">
 						<label>
 							Title:<br>
 							<input id="new-item-form-title" type="text" name="title" required>

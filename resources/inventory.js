@@ -58,7 +58,8 @@ function renderItems(data, deleted = false){
 	$.each(data, function(i, item){
 		var output = '<div class="item' + (deleted ? ' item-deleted"' : '"') + '>';
 		if(!deleted) output += '<button class="item-delete" onclick="deleteItem(' + item['id'] + ');">&cross;</button>';
-		output += '<a href="../resources/item_images/' + item['id'] + '.jpg" target="_blank"><img class="item-image" src="../resources/item_images/thumbnail/' + item['id'] + '.jpg" width="240" height="135"></a>';
+		if(item['hasPicture']) output += '<a href="../resources/item_pictures/' + item['id'] + '.jpg" target="_blank"><img class="item-image" src="../resources/item_pictures/thumbnails/' + item['id'] + '.jpg" height="135"></a>';
+		else output += '<img class="item-image" src="../resources/item_pictures/thumbnails/item_placeholder.png">';
 		output += '<div class="item-information">';
 		output += '<h3 class="item-title">' + item['title'] + '</h3>';
 		output += '<div class="item-categories">';
