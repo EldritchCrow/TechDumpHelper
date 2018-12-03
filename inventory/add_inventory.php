@@ -22,7 +22,7 @@ if(!$title){
 
 // Handle uploaded picture
 $picture = $_FILES['picture'] ?? null;
-if($picture){
+if($picture['error'] == 0){
 	if($picture['error']){
 		http_response_code(500);
 		die(json_encode(['error' => 'Error uploading picture']));
@@ -52,7 +52,7 @@ try{
 
 	// Insert item into the items table
 	$item_stmt->execute([
-		$td, $title, $description, $picture ? true : false
+		$td, $title, $description, ($picture['error'] == 0) ? true : false
 	]);
 
 	$itemID = $sql->lastInsertId();
