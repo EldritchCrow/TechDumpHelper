@@ -14,9 +14,7 @@ $(document).ready(function () {
          var output = "<tr>";
          $.each(data.sites, function (i, item) {
             output += "<td><a href=\"" + item.url + "\">";
-            output += "<h4>Name:</h4> " + item.name;
-            output += "<br>";
-            output += "<h5>Rating:</h5> " + item.rating;
+            output += "<h4>" + item.name + "</h4>";
             output += "<br>";
             output += "<img src=\"" + item.picture + "\"/>";
             output += "</a></td>";

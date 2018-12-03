@@ -10,12 +10,8 @@ h4 {
    display: inline;
 }
 
-h5 {
-   clear: none;
-   display: inline;
-}
-
 #sites img{
+   margin-top: 1em;
    width: 200px;
    height: 200px;
 }
