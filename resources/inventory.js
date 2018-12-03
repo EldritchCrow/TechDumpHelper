@@ -10,9 +10,9 @@ $(document).ready(function(){
 				$('#new-item form .item-categories').append('<label class="item-category"><input type="checkbox" name="category[]" value="' + category['id'] + '">' + category['name'] + '</label>');
 			});
 		},
-		error: function(e){
-			alert('Error: Failed to load categories:');
-			console.error(e);
+		error: function(xhr, status, msg){
+			alert('Error: Failed to load categories.\nStatus: ' + status + '\nError Message: ' + msg);
+			console.error(status + ': ' + msg);
 		}
 	});
 
@@ -38,17 +38,17 @@ $(document).ready(function(){
 				success: function(data){
 					renderItems(data, true);
 				},
-				error: function(e){
-					alert('Error: Failed to load deleted inventory data');
-					console.error('Failed to load deleted inventory data');
-					console.error(e);
+				error: function(xhr, status, msg){
+					alert('Error: Failed to load deleted inventory data.\nStatus: ' + status + '\nError Message: ' + msg);
+					console.error('Failed to load deleted inventory data.\nStatus: ' + status + '\nError Message: ' + msg);
+					console.error(status + ': ' + msg);
 				}
 			});
 		},
-		error: function(e){
-			alert('Error: Failed to load inventory data');
-			console.error('Failed to load inventory data:');
-			console.error(e);
+		error: function(xhr, status, msg){
+			alert('Error: Failed to load inventory data.\nStatus: ' + status + '\nError Message: ' + msg);
+			console.error('Failed to load inventory data.\nStatus: ' + status + '\nError Message: ' + msg);
+			console.error(status + ': ' + msg);
 		}
 	});
 
@@ -86,10 +86,10 @@ function deleteItem(id){
 		success: function(){
 			location.reload();
 		},
-		error: function(e){
-			alert('Error: Failed to delete item');
-			console.error('Failed to delete item:');
-			console.error(e);
+		error: function(xhr, status, msg){
+			alert('Error: Failed to delete item.\nStatus: ' + status + '\nError Message: ' + msg);
+			console.error('Failed to delete item.\nStatus: ' + status + '\nError Message: ' + msg);
+			console.error(status + ': ' + msg);
 		}
 	});
 }

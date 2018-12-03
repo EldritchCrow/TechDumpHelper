@@ -2,13 +2,13 @@
 
 $(document).ready(function () {
 
-   $.get("../templates/header.txt", function(data) {
+   $.get("./templates/header.txt", function(data) {
       $("#header").append(data);
    });
 
    $.ajax({
       type: "GET",
-      url: "../resources/site_data.json",
+      url: "./resources/site_data.json",
       dataType: "json",
       success: function (data, status) {
          var output = "<tr>";
@@ -26,8 +26,8 @@ $(document).ready(function () {
          });
          output += "</tr>";
          $("#sites").append(output);
-      }, error: function (msg) {
-         alert("Something went wrong!\nError Message:\n\"" + msg + "\"");
+      }, error: function (xhr, status, msg) {
+         alert("Something went wrong!\nStatus: " + status + "\nError Message: \"" + msg + "\"");
       }
    });
 });
