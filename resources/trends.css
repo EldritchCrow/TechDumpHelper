@@ -1,0 +1,10 @@
+
+#content {
+   text-align: center;
+}
+
+#content table {
+   display: inline-block;
+   font-size: 24px;
+   margin: 0 5% 0 5%;
+}
