@@ -3,7 +3,7 @@
       "Enter through the main door and proceed right down the hallway towards room 337.",
       "Take the stairs down a level and turn right.",
       "Head straight down the hallway.",
-      "hello3"
+      "Continue down the hallway until it turns dead ends and turn right."
    ],
-   "final_step" : "hello_fin"
+   "final_step" : "At the end of the hallway, the tech dump will be on your right."
 }
