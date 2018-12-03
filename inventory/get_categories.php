@@ -8,7 +8,7 @@ require 'database.php';
 
 // Get the categories from the database
 try{
-	$categories = $sql->query('SELECT ID AS id, Name AS name FROM inventory_categories')->fetchAll();
+	$categories = $sql->query('SELECT ID AS id, Name AS name FROM inventory_categories ORDER BY Name')->fetchAll();
 }catch(PDOException $e){
 	http_response_code(500);
 	die(json_encode(['error' => 'Failed to query the database']));
